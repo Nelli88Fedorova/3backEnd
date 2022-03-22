@@ -68,10 +68,9 @@ $db=new PDO('mysql:host=localhost;dbname=u47586',$user,$pass, array(PDO::ATTR_PE
 try{
     $stmt=$bd->prepare("INSERT INTO MainData SET name = ?, email = ?, date=?, gender=?, hand=?, check=?");
     $stmt->execute(array($name, $email,$date, $gender,$hand, $check));
-    $power_id=$db->lastInsertId();
 
     $super=$db->>prepare("INSERT INTO Superpovers SET power_id=?, powers=?");
-    $super->execute(array($power_id, $powers));
+    $super->execute(array($syperpover));
 }
 catch(PDOException $e)
 {
